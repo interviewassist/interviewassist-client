@@ -9,5 +9,16 @@
     name: "Header"
   }
 </script>
+<style>
+/* Header.css*/
+header{
+    background:#111;
+}
+header>#logo{
+    width:18rem;
+}
+/* Header.css*/
+</style>
+
 
 
