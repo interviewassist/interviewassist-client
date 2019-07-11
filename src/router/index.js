@@ -3,8 +3,8 @@ import Router from 'vue-router'
 
 Vue.use(Router)
 
-import IndexPage from '@/components/IndexPage'
-import LoginPage from '@/components/LoginPage'
+import IndexPage from '@/views/IndexPage'
+import LoginPage from '@/views/LoginPage'
 
 export default new Router({
   mode: 'history',
