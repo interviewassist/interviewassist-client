@@ -1,82 +1,34 @@
 <template lang="html">
     <section>
-        <article class="left"></article>
-        <article class="right">
-            <ul class="tech">
-                <li v-for="img in imgs" >
-                    <img class="tech_img" :src="require(`@/assets/forList/${img.title}.png`)">
-                    <h3>{{img.title}}</h3>
-                    <p>{{img.title}} is ...</p>
-                </li>
-            </ul>
+        <ContextMenu></ContextMenu>
+        <article class="center">The question is, what did the archbishop find?' The Mouse gave a sudden leap out of it, and fortunately was just in time to hear it say, as it turned round and swam slowly back to her: its face was quite pale (with passion, Alice thought), and it said in a low curtain she had not got into it), and sometimes she scolded herself so severely as to bring tears into her eyes; and once she remembered trying to box her own ears for having cheated herself in a long, low hall, which was lit up by a row of lodging houses, and behind it was all dark overhead; before her was another long passage, and the White Rabbit returning, splendidly dressed, with a sudden burst of tears, until there was a large pool all round the hall, but they all looked so grave that she had never before seen a rabbit with either a waistcoat-pocket, or a watch to take out of it, and burning with curiosity, she ran across the field after it, and found in it a very small cake, on which the words `EAT ME' were beautifully marked in currants. I wonder what I should be like then?' And she tried to fancy what the flame of a book,' thought Alice `without pictures or conversations in it, `and what is the use of a book,' thought Alice `without pictures or conversation?' So she was now the right size for going through the little door into that lovely garden.
         </article>
+        <TechList></TechList>
     </section>
 </template>
 
 <script>
+import TechList from "../components/TechList"
+import ContextMenu from "../components/ContextMenu"
 export default {
     name : "MainPage"
-    ,data: function(){
-      return{
-        imgs:[{title:"android"},{title:"angular"},{title:"aws"},{title:"c"},{title:"cpp"},
-                {title:"csharp"},{title:"css"},{title:"django"},{title:"docker"},{title:"flask"},
-                {title:"git"},{title:"html"},{title:"ios"},{title:"java"},{title:"javascript"},
-                {title:"mongodb"},{title:"mysql"},{title:"nodejs"},{title:"php"},{title:"python"},
-                {title:"react"},{title:"spring-boot"},{title:"vue"}]
-      }  
-    }
-    ,mounted:function(){
-        // var imgs = document.getElementsByClassName("tech_img");
-
-        // for(var i=0; i<imgs.length;i++){
-        //     imgs[i].setAttribute("src","../assets/forList/" + this.imgs[i].title+ ".png");
-        // }
-    }
-    ,methods:{
-
+    ,components:{
+        TechList
+        ,ContextMenu
     }
 }
 </script>
 
 <style>
-/* html,body,body>div{
-    height:100%;
-} */
-body>div{
-    display: flex;
-    flex-direction: column;
-}
-body>div>section{
+div>section{
+    background:#FBFAF6;
     display:flex;
+}
+section>article{
     flex:1;
+    padding : 3rem;
 }
-.left,.right{
+.center,.right{
     height:inherit;
-}
-section>.left{
-    background: #555;
-    flex:60;
-}
-section>.right{
-    overflow:auto;
-    flex:40;
-}
-.right>ul.tech{
-    padding-top:10px;
-    background:#111;
-}
-ul.tech>li{
-    list-style: none;
-    height:70px;
-    padding-top:10px;
-    margin-bottom:10px;
-    background:rgba(250,130,9,0.5);
-}
-li>.tech_img{
-    float:left;
-    width:50px;
-    height:50px;
-    margin-left:10px;
-    margin-right:10px;
 }
 </style>

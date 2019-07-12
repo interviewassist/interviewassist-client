@@ -1,10 +1,13 @@
 <template lang="html">
+    <div>
+    <img id="logo" src="../assets/logo2.png">
     <div id="main_wrap">
         <h1 style="text-align: center">개발자로서 직장을 찾고 계신가요?<br><br>면접에서 당신이 알아야할 것들이 있습니다</h1>
         <button id="main_btn" class="div_center">회원가입</button>
         <div style="width:100%;display:flex;justify-content:center;">
             <a id="forceEnter" class="div_center" href="main">가입없이 둘러보기</a>
         </div>
+    </div>
     </div>
 </template>
 
@@ -24,8 +27,12 @@ html{
     
     color:#eee;
 }
-header{
-    background:transparent;
+body>div>header{
+    display:none;
+}
+div>#logo{
+    margin : 1rem 0 0 1rem;
+    width:19rem;
 }
 #main_wrap{
     margin: 7rem auto 0 auto ;

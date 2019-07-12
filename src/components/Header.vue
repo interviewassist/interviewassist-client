@@ -12,10 +12,12 @@
 <style>
 /* Header.css*/
 header{
-    background:#111;
+    background:rgba(4,5,9,0.8);
+    display:flex;
+    height:6vh;
 }
 header>#logo{
-    width:18rem;
+  height:inherit;
 }
 /* Header.css*/
 </style>
