@@ -4,7 +4,7 @@
         <article class="right">
             <ul class="tech">
                 <li v-for="img in imgs" >
-                    <img class="tech_img" src="../assets/forList/java.png">
+                    <img class="tech_img" :src="require(`@/assets/forList/${img.title}.png`)">
                     <h3>{{img.title}}</h3>
                     <p>{{img.title}} is ...</p>
                 </li>
@@ -26,11 +26,11 @@ export default {
       }  
     }
     ,mounted:function(){
-        var imgs = document.getElementsByClassName("tech_img");
+        // var imgs = document.getElementsByClassName("tech_img");
 
-        for(var i=0; i<imgs.length;i++){
-            imgs[i].setAttribute("src","../assets/forList/" + this.imgs[i].title+ ".png");
-        }
+        // for(var i=0; i<imgs.length;i++){
+        //     imgs[i].setAttribute("src","../assets/forList/" + this.imgs[i].title+ ".png");
+        // }
     }
     ,methods:{
 
