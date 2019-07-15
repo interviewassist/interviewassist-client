@@ -1,16 +1,14 @@
 <template>
-    <div>
-      <Header></Header>
+      <!-- <Header></Header> -->
       <router-view></router-view>
-    </div>
 </template>
 
 <script>
-import Header from './components/Header'
+// import Header from './components/Header'
 export default {
   name: 'App',
   components: {
-    Header,
+    // Header
   }
   ,data () {
     return {
@@ -71,5 +69,9 @@ body{
   background :rgba(200,200,200,0.9);
 }
 /* Slidebar style _end*/
+/* outline none */
+input,button{
+  outline:none;
+}
 </style>
 

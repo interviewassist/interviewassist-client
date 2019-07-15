@@ -3,11 +3,11 @@
         <button class="close_context"><i class="material-icons">chevron_left</i></button>
         <section>
             <div id="profile_img"></div>
-            <a href="#" class="user">로그인</a>
-            <a href="#" class="user">회원가입</a>
+            <a href="#" class="user_login">로그인</a>
+            <a href="#" class="user_signup">회원가입</a>
             <footer>
                 <a class="link" href="https://github.com/interviewassist" target="blank_">
-                    <i class="github-icon"></i>github
+                    <i class="github-icon"></i> github
                 </a>
             </footer>
         </section>
@@ -39,6 +39,14 @@ export default {
             article.style.display = "block";
             nav.isOpened = !nav.isOpened;
         });
+
+        var user_login = document.getElementsByClassName("user_login")[0];
+
+        user_login.addEventListener("click",()=>{
+            var modal = document.getElementsByClassName("modal")[0];
+
+            modal.classList.toggle("show_modal");
+        });
     }
 }
 </script>
@@ -58,9 +66,6 @@ export default {
         top:0;
         width: 30px;
 
-        /* Remove after click effects */
-        border:0;
-        outline:0;
     }
     .close_context>i{
         font-size:24px;
