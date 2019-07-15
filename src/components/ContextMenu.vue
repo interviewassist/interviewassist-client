@@ -1,6 +1,6 @@
 <template>
     <nav class="left">
-        <button id="move_context"><i class="material-icons">keyboard_arrow_left</i></button>
+        <button class="close_context"><i class="material-icons">chevron_left</i></button>
         <section>
             <div id="profile_img"></div>
             <a href="#" class="user">로그인</a>
@@ -23,30 +23,21 @@ export default {
         }
     }
     ,mounted : function(){
-        var move_context = document.getElementById("move_context");
+        var close_context = document.querySelector("nav>.close_context");
         
-        move_context.addEventListener("click",function(element){
-            var nav = document.querySelector("nav");
-            var section = document.querySelector("nav>section");
-            var width = section.offsetWidth;
-            /**In callback function ( this. === move_context. )*/
-            if(this.showContextMenu===undefined){
-                this.showContextMenu = true;
-            }
-            if(this.showContextMenu){
-                nav.style.width = "30px";
-                section.style.width = "30px";
-                section.style.transitionDelay = "0s";
-                section.style.opacity = "0";
-            }else{
-                nav.style.width = "10rem";
-                section.style.width = "10rem";
-                section.style.transitionDelay = "0.4s";
-                section.style.opacity = "1";
-            }
+        var article = document.getElementsByClassName("center")[0];
+        var nav = document.querySelector("nav");
+        var section = document.querySelector("nav>section");
 
-            this.firstElementChild.classList.toggle("move_context-active");
-            this.showContextMenu = !this.showContextMenu;
+        close_context.addEventListener("click",function(element){
+            /**In callback function ( this. === close_context. )*/
+            nav.style.width = "0px";
+            section.style.width = "0px";
+            section.style.transitionDelay = "0s";
+            section.style.opacity = "0";
+
+            article.style.display = "block";
+            nav.isOpened = !nav.isOpened;
         });
     }
 }
@@ -54,12 +45,12 @@ export default {
 <style>
     section>nav.left{
         position:relative;
-        width: 10rem;
+        width: 0;
         height:inherit;
         transition : all 0.4s ease-out;
         border-right: 1px solid rgba(200,200,200,0.5);
     }
-    nav.left>#move_context{  
+    nav.left>.close_context{  
         background : transparent;
         height: 30px;
         position:absolute;
@@ -71,14 +62,12 @@ export default {
         border:0;
         outline:0;
     }
-    #move_context>i{
+    .close_context>i{
+        font-size:24px;
         transition: all 0.4s ease;
     }
-    #move_context>i:hover{
+    .close_context>i:hover{
         font-weight: bold;
-    }
-   .move_context-active{
-        transform: rotate(180deg);
     }
     #profile_img{
         width:50px;
@@ -96,6 +85,7 @@ export default {
         text-align: center;
         height:inherit;
         width:inherit;
+        opacity: 0;
     }
     nav>section *{
         opacity: inherit;

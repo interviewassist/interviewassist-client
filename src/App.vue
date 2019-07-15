@@ -11,8 +11,8 @@ export default {
   name: 'App',
   components: {
     Header,
-  },
-  data () {
+  }
+  ,data () {
     return {
       //
     }
