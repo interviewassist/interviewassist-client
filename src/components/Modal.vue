@@ -1,52 +1,37 @@
 <template>
     <div class="modal">
-        <!-- <div class="modal-filter"> -->
-            <section class="modal_wrap">
-                <button class="close_modal"><i class="material-icons">close</i></button>
-                <header>
-                    <img class="modal_logo" src="../assets/logo2.png">
-                </header>
-                <form id="login_form">
-                    <input class="modal_input" name="user_id"
-                            type="text" placeholder="아이디" autofocus>
-                    <input class="modal_input" name="user_pw"
-                            type="password" placeholder="비밀번호">
-                    <button class="login_btn">로그인</button>
-                    <a class="forgot"
-                        href="#">아이디 및 비밀번호 찾기</a>
-                    <!-- <div class="g-signin2" data-onsuccess="onSignIn"></div> -->
-                </form>
-                <div class="social_btn_group">
-                    <!-- <button class="github_login">
-                        <img class="github_img"  src="../assets/icons/GitHub-Mark-Light-32px.png">
-                        <img class="github_logo" src="../assets/icons/GitHub_Logo_White.png">
-                    </button>
-                    <div style="height:1rem"></div> -->
-                    <button class="google_login">
-                        <!-- <img class="google_img"  src="../assets/icons/google_Mark64.png"> -->
-                        <img class="google_logo"  src="../assets/icons/google_Logo150.png">
-                        <!-- <img class="google_img"  src="../assets/icons/google_Logo300.png"> -->
-                    </button>
-                    <div style="height:1rem"></div>
+        <section class="modal_wrap">
+            <button class="close_modal"><i class="material-icons">close</i></button>
+            <header>
+                <img class="modal_logo" src="../assets/logo2.png">
+            </header>
+            <form id="login_form">
+                <input class="modal_input" name="user_id"
+                        type="text" placeholder="아이디" autofocus>
+                <input class="modal_input" name="user_pw"
+                        type="password" placeholder="비밀번호">
+                <button class="login_btn">로그인</button>
+                <a class="forgot"
+                    href="#">아이디 및 비밀번호 찾기</a>
+            </form>
+            <div class="social_btn_group">
+                <button class="google_login">
+                    <img class="google_logo"  src="../assets/icons/google_Logo150.png">
+                </button>
+                
+                <button class="github_login">
+                    <img class="github_img"  src="../assets/icons/GitHub-Mark-Light-32px.png">
                     
-                    <button class="github_login">
-                        <img class="github_img"  src="../assets/icons/GitHub-Mark-Light-32px.png">
-                        <!-- <img class="github_img"  src="../assets/icons/GitHub-Mark-Light-120px-plus.png"> -->
-                        <img class="github_logo" src="../assets/icons/GitHub_Logo_White.png">
-                    </button>
-                </div>
-            </section>
-        <!-- </div> -->
+                    <img class="github_logo" src="../assets/icons/GitHub_Logo_White.png">
+                </button>
+            </div>
+        </section>
     </div>    
 </template>
 <script>
 export default {
     name : "Modal"
     ,promp:{
-        /** 
-         *  type 1: Login
-         *  type 2: SignUp
-         */
         type:1
     }
     ,mounted:function(){
@@ -85,10 +70,11 @@ export default {
         height:90vh;
     }
     .modal_wrap>header{
-        margin:5rem auto 2rem auto;
+        margin:10vh auto 0 auto;
     }
     .modal_wrap>#login_form {
         flex:1;
+        margin-bottom:20vh;
     }
     header>.modal_logo{
         width:90%;
@@ -100,14 +86,15 @@ export default {
 }
 @media (min-width: 415px){
     .modal>.modal_wrap{
-        width:500px;
+        width:50vh;
         height:80vh;
     }
     .modal_wrap>header{
-        margin:7rem auto 2rem auto;
+        margin:9vh auto 0 auto;
     }
     .modal_wrap>#login_form {
         flex:2;
+        margin-bottom:4vh;
     }
     header>.modal_logo{
         width:50%;
@@ -122,7 +109,6 @@ export default {
         position:fixed;
         width:100vw;
         height:100vh;
-        /* background:#FBFAF6; */
         background:rgba(4,5,9,0.8);
         z-index: 1;
     }
@@ -133,13 +119,12 @@ export default {
     }
     .modal>.modal_wrap{
         background:#FBFAF6;
-        border-radius: 1rem;
+        border-radius: 2vh;
         display:flex;
         flex-direction: column;
         position:relative;
         margin:auto;
-        /* background:rgba(251,250,246,0.95); */
-        padding: 2rem;
+        padding: 0 2vh ;
     }
     .modal_wrap>.close_modal{
         display:inline-block;
@@ -147,8 +132,10 @@ export default {
         top:0;
         right:0;
         color:rgba(4,5,9,0.8);
-        margin:1rem;
-
+        margin:2vh;
+    }
+    .close_modal>.material-icons{
+        font-size: 4vh;
     }
     .modal_wrap>header{
         display:flex;
@@ -171,19 +158,15 @@ export default {
         flex-direction: column;
         width:100%;
         height: 100%;
-        /* padding:3rem 0 0 0; */
-        /* background: #bbb; */
         justify-content:flex-end;
-        margin:0 0 5rem 0;
     }
     #login_form>.modal_input{
         border-radius: 5rem;
         padding: 0 1rem 0 1rem;
         display:block;
-        /* width:90%; */
-        height:3rem;
+        height:5vh;
         background:#fff;
-        margin: 0 0 1rem 0;
+        margin: 0 0 1vh 0;
         box-shadow: 0px 1px 1px 0px gray;
 
     }
@@ -192,9 +175,9 @@ export default {
     }
 
     #login_form>.login_btn{
-        width: 12rem;
-        height:3rem;
-        margin:2rem auto 0 auto;
+        width: 20vh;
+        height:4vh;
+        margin:4vh auto 0 auto;
         background: rgba(255, 166, 0, 0.7);
         border-radius: 5rem;
         font-weight: bold;
@@ -204,7 +187,7 @@ export default {
         box-shadow: 0px 2px 2px 1px rgba(4,5,9,0.3);
     }
     #login_form>.forgot{
-        font-size: 0.8rem;
+        font-size: 1.1vh;
         color:inherit;
         text-decoration: none;
         margin:1rem auto 0 auto;
@@ -212,38 +195,29 @@ export default {
     #login_form>.forgot:hover{
         text-decoration: underline;
     }
-/* 
-    <button class="github_login">
-        <span class="github_img"><span><span class="github_logo"><span>
-    </button> 
-*/
+    /* Social Login Buttons*/
     .social_btn_group{
         display:flex;
         flex-direction: column;
-        justify-content: center;
+        justify-content: flex-end;
     }
-    .github_login,
-    .google_login{
-        /* margin: 1rem 0 1rem 0; */
+    .social_btn_group>*{
         border-radius: 5rem;
-
+        padding: 1vh 0 1vh 0;
+        margin-bottom:2vh;
     }
     .github_login{
         background:#24292e;
-        padding:0.5rem;
     }
 
     .google_login{
         background:white;
-        padding:0.5rem;
         box-shadow: 1px 1px 1px rgba(0,0,0,.3);
     }
 
-    .github_login>.github_img
-    ,.github_login>.github_logo
-    ,.google_login>.google_img
-    ,.google_login>.google_logo{
-        height:2rem;
+    .github_login>*
+    ,.google_login>*{
+        height:3vh;
     }
 </style>
 

@@ -49,7 +49,7 @@ export default {
 }
 </script>
 
-<style>
+<style scoped>
 div.main_wrap{
     background : #FBFAF6;
     color:rgba(4,5,9,0.8);

@@ -1,5 +1,5 @@
 <template lang="html">
-    <div class="index_warp">
+    <div class="index_wrap">
         <img class="logo" src="../assets/logo2.png">
         <div class="index_content">
             <h1 style="text-align: center">개발자로서 직장을 찾고 계신가요?<br><br>면접에서 당신이 알아야할 것들이 있습니다</h1>
@@ -17,18 +17,14 @@ export default {
 }
 </script>
 <style scoped>
-html{
+.index_wrap{
     background: url("https://images.unsplash.com/photo-1496902526517-c0f2cb8fdb6a?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80") no-repeat center center fixed;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
     background-size: cover;
-}
 
-</style>
-<style>
-.index_wrap{
-    background: transparent;
+    height:100vh;
 }
 img.logo{
     margin : 1rem 0 0 1rem;
