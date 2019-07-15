@@ -26,8 +26,6 @@ export default {
       }  
     }
     ,mounted : function(){
-        var self = this;
-
         var close_techlist = document.querySelector(".right>.close_techlist");
         
         /** menu open&close button  */
@@ -49,14 +47,14 @@ export default {
         /** list item's event  */
         var tech = document.querySelector("ul.tech");
 
-        tech.addEventListener("click",function(evt){
+        tech.addEventListener("click",(evt) =>{
             /* evt.currentTarget === tech */
             var clicked = evt.target.tagName;
             if(clicked==="LI"){
-                self.$emit('tech-event',evt.target.lastElementChild.value);
+                this.$emit('tech-event',evt.target.lastElementChild.value);
             }
             else if(clicked==="IMG"||clicked==="H3"||clicked==="P"){
-                self.$emit('tech-event',evt.target.parentElement.lastElementChild.value);
+                this.$emit('tech-event',evt.target.parentElement.lastElementChild.value);
             }
         })
     }
@@ -83,8 +81,6 @@ nav.right>button.close_techlist{
     top:0;
     width: 30px;
 
-    /* Remove after click effects */
-    outline:0;
 }
 .close_techlist>i{
     font-size:24px;

@@ -101,7 +101,7 @@
 </script>
 <style>
 /* Header.css*/
-header{
+div>header{
     background:rgba(4,5,9,0.8);
     display:flex;
     height:6vh;
@@ -117,7 +117,6 @@ header>.control-set{
 }
 .control-set>*{
   color: #FBFAF6;
-  outline:none;
 }
 .control-set>.move_context{
   margin: 0 0.3rem 0 0 ;
