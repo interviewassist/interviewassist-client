@@ -4,6 +4,10 @@ import Vue from 'vue'
 import './plugins/vuetify'
 import App from './App'
 import router from './router'
+import axios from 'axios'
+
+axios.defaults.headers.common['Authorization'] = `Bearer ${localStorage.getItem("token")}`;
+Vue.prototype.$http = axios
 
 Vue.config.productionTip = false
 
