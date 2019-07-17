@@ -13,9 +13,9 @@
 
 <script>
 export default {
-    name : "IndexPage"
-}
+  name: "IndexPage"
+};
 </script>
 <style scoped>
-@import url('../assets/css/index.css');
+@import url("../assets/css/index.css");
 </style>
