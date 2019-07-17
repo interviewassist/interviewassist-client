@@ -1,0 +1,74 @@
+@media (min-width: 0px) and (max-width: 414px){
+    .modal>.modal_wrap{
+        width:90vw;
+        height:90vh;
+    }
+    .modal_wrap>header{
+        margin:10vh auto 0 auto;
+    }
+    
+    header>.modal_logo{
+        width:90%;
+    }
+}
+@media (min-width: 415px){
+    .modal>.modal_wrap{
+        width:50vh;
+        height:80vh;
+    }
+    .modal_wrap>header{
+        margin:9vh auto 0 auto;
+    }
+    header>.modal_logo{
+        width:50%;
+    }
+}
+div.modal{
+    display:none;
+    position:fixed;
+    top:0;
+    width:100vw;
+    height:100vh;
+    background:rgba(4,5,9,0.8);
+    z-index: 1;
+}
+div.show_modal{
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.modal>.modal_wrap{
+    background:#FBFAF6;
+    border-radius: 2vh;
+    display:flex;
+    flex-direction: column;
+    position:relative;
+    margin:auto;
+    padding: 0 2vh ;
+}
+.modal_wrap>.close_modal{
+    display:inline-block;
+    position: absolute;
+    top:0;
+    right:0;
+    color:rgba(4,5,9,0.8);
+    margin:2vh;
+}
+.close_modal>.material-icons{
+    font-size: 4vh;
+}
+.modal_wrap>header{
+    display:flex;
+    position:absolute;
+    top: 0;
+    left:0;
+    width: 100%;
+    font-size:8vmin;
+    font-weight: bold;
+    text-align:center;
+    background:rgba(4,5,9,0.8);
+
+}
+header>.modal_logo{
+    margin: 0 auto 0 auto;
+}

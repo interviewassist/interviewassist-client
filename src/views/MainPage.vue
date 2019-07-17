@@ -1,16 +1,16 @@
 <template lang="html">
 
     <div class="main_wrap">
-        <Modal></Modal>
         <Header></Header>
         <section>
             <ContextMenu></ContextMenu>
             <article class="center">
                 <SearchBox></SearchBox>
-                <div class="card" v-for="card in cards">
-                </div>
-                <p>{{tech}}</p>
-                The question is, what did the archbishop find?' The Mouse gave a sudden leap out of it, and fortunately was just in time to hear it say, as it turned round and swam slowly back to her: its face was quite pale (with passion, Alice thought), and it said in a low curtain she had not got into it), and sometimes she scolded herself so severely as to bring tears into her eyes; and once she remembered trying to box her own ears for having cheated herself in a long, low hall, which was lit up by a row of lodging houses, and behind it was all dark overhead; before her was another long passage, and the White Rabbit returning, splendidly dressed, with a sudden burst of tears, until there was a large pool all round the hall, but they all looked so grave that she had never before seen a rabbit with either a waistcoat-pocket, or a watch to take out of it, and burning with curiosity, she ran across the field after it, and found in it a very small cake, on which the words `EAT ME' were beautifully marked in currants. I wonder what I should be like then?' And she tried to fancy what the flame of a book,' thought Alice `without pictures or conversations in it, `and what is the use of a book,' thought Alice `without pictures or conversation?' So she was now the right size for going through the little door into that lovely garden.
+                <section class="card__outerwrap">
+                  <template v-for="problem in problems">
+                    <Problem :card="problem"></Problem>
+                  </template>
+                </section>
             </article>
             <TechList @tech-event="getTech"></TechList>
         </section>
@@ -19,59 +19,100 @@
 </template>
 
 <script>
-import TechList from "../components/TechList"
-import ContextMenu from "../components/ContextMenu"
-import SearchBox from "../components/SearchBox"
-import Modal from "../components/Modal"
-import Header from "../components/Header"
+import TechList from "../components/TechList";
+import ContextMenu from "../components/ContextMenu";
+import SearchBox from "../components/SearchBox";
+import Header from "../components/Header";
+import Problem from "../components/Problem";
 export default {
-    name : "MainPage"
-    ,components:{
-        TechList
-        ,ContextMenu
-        ,SearchBox
-        ,Modal
-        ,Header
-    }
-    ,data: function(){
-        return{
-            tech: 'android'
-            ,cards : []
+  name: "MainPage",
+  components: {
+    TechList,
+    ContextMenu,
+    SearchBox,
+    Header,
+    Problem
+  },
+  data: function() {
+    return {
+      tech: "android",
+      problems: [
+        {
+          id: "",
+          title: "면접질문입니다.....",
+          tags: ["javascript", "ES6", "WEB", "front-end"],
+          givenAnswer: "모범답안입니다...",
+          references: ["github", "edwith"],
+          lastUpdate: "2019.7.17"
         }
+      ]
+    };
+  },
+  mounted: function() {
+    var center = document.getElementsByClassName("center")[0];
+    center.addEventListener("click", evt => {
+      var list = evt.target.classList;
+      if (list.contains("card__toggle")) {
+        var detail = evt.target.parentElement.lastElementChild;
+        detail.classList.toggle("card__ShowDetail");
+
+        var icon = evt.target.firstElementChild;
+        icon.classList.toggle("icon__rotate");
+      } else if (list.contains("material-icons")) {
+        var detail = evt.target.parentElement.parentElement.lastElementChild;
+        console.log(detail.classList);
+        detail.classList.toggle("card__ShowDetail");
+        evt.target.classList.toggle("icon__rotate");
+      }
+    });
+  },
+  methods: {
+    /** get selected tech from techList */
+    getTech: function(tech) {
+      this.tech = tech;
     }
-    ,methods:{
-        /** get selected tech from techList */
-        getTech : function(tech){
-            this.tech = tech;
-            console.log(tech);
-        }
-    }
-}
+  }
+};
 </script>
 
 <style scoped>
-div.main_wrap{
-    background : #FBFAF6;
-    color:rgba(4,5,9,0.8);
+@media (min-width: 0px) and (max-width: 414px) {
+  .center {
+    padding: 3rem 1rem 1rem 1rem;
+  }
+  section.card__outerwrap {
+    column-count: 1;
+  }
 }
-.main_wrap>section{
-    display:flex;
-    height:94vh;
+@media (min-width: 415px) {
+  .center {
+    padding: 4rem 3rem 3rem 3rem;
+  }
+  section.card__outerwrap {
+    column-count: 2;
+  }
 }
-section>article{
-    flex:1;
-    padding : 4rem 3rem 3rem 3rem;
-    position:relative;
-    overflow:auto;
-    transition: all 0.5s;
+div.main_wrap {
+  background: #fbfaf6;
+  color: rgba(4, 5, 9, 0.8);
+}
+.main_wrap > section {
+  display: flex;
+  height: 94vh;
+}
+article.center {
+  flex: 1;
+  overflow: auto;
+  position: relative;
 }
 article.center * {
-    opacity: inherit;
+  opacity: inherit;
 }
-.center>p::first-letter{
-    font-weight: bold;
-    font-size:3rem;
-    color:#FBFAF6;
-    background:rgba(4,5,9,0.8);
+section.card__outerwrap {
+  display: block;
+  position: relative;
+}
+section.card__outerwrap:hover .card:not(:hover) {
+  opacity: 0.96;
 }
 </style>
