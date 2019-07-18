@@ -1,0 +1,25 @@
+.header__wrap {
+  background: rgba(4, 5, 9, 0.8);
+  display: flex;
+  height: 6vh;
+  justify-content: space-between;
+}
+
+.header__link,
+.header__logo {
+  height: inherit;
+}
+
+.header__controlset {
+  display: flex;
+  margin: 0 1rem 0 0;
+  justify-content: center;
+}
+
+.header__controlset>* {
+  color: #fbfaf6;
+}
+
+.header__movecontext {
+  margin: 0 0.3rem 0 0;
+}

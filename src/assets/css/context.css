@@ -1,87 +1,125 @@
-section>nav.left{
-    position:relative;
-    width: 0;
-    height:inherit;
-    transition : all 0.4s ease-out;
-    border-right: 1px solid rgba(200,200,200,0.5);
-}
-nav.left>.close_context{  
-    background : transparent;
-    height: 30px;
-    position:absolute;
-    right:0;
-    top:0;
-    width: 30px;
+@media (min-width:0px) and(max-width:414px) {
+  nav.left--opened {
+    width: 100vw
+  }
 
-}
-.close_context>i{
-    font-size:24px;
-    transition: all 0.4s ease;
-}
-.close_context>i:hover{
-    font-weight: bold;
-}
-#profile_img{
-    width:50px;
-    height:50px;
-    background: #333;
-    border-radius: 50%;
-    margin : 0 auto 0.6rem auto;
-    margin-left:auto;
-    margin-right:auto;
-
-    cursor:pointer;
-}
-nav.left>section{
-    margin: 4rem 0 0 0;
-    text-align: center;
-    height:inherit;
-    width:inherit;
-    opacity: 0;
+  section.context__wrap--opened {
+    width: 100vw
+  }
 }
 
-nav>section *{
-    opacity: inherit;
-    transition: all 0.3s;
-}
-.context__btn{
-    text-decoration: none;
-    color:inherit;
+@media (min-width:415px) {
+  nav.left--opened {
+    width: 10rem
+  }
 
+  section.context__wrap--opened {
+    width: 10rem
+  }
 }
-.context__btn:hover{
-    text-decoration: underline;
+
+.left {
+  position: relative;
+  width: 0;
+  height: inherit;
+  transition: all 0.4s ease-out;
+  border-right: 1px solid rgba(200, 200, 200, 0.5);
 }
-.user{
-    color: rgba(4,5,9,0.8);
-    text-decoration: none;
-    font-size:0.8rem;
+
+.context__wrap {
+  margin: 4rem 0 0 0;
+  text-align: center;
+  height: inherit;
+  width: 0;
+  opacity: 0;
 }
-.user:hover{
-    text-decoration: underline;
+
+nav.left--opened {}
+
+section.context__wrap--opened {
+  opacity: 1
 }
 
 
-section>footer{
-    position:absolute;
-    width:inherit;
-    bottom:0;
-    margin : 0 auto 1rem auto;
+.close_context {
+  background: transparent;
+  height: 30px;
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 30px;
 }
-.link{
-    text-decoration: none;
-    color:rgba(4,5,9,0.8);
+
+.close_context>i {
+  font-size: 24px;
+  transition: all 0.4s ease;
 }
-.link:hover{
-    text-decoration: underline;
+
+.close_context>i:hover {
+  font-weight: bold;
+}
+
+#profile_img {
+  width: 50px;
+  height: 50px;
+  background: #333;
+  border-radius: 50%;
+  margin: 0 auto 0.6rem auto;
+  margin-left: auto;
+  margin-right: auto;
+
+  cursor: pointer;
+}
+
+.context__wrap * {
+  opacity: inherit;
+  transition: all 0.3s;
+}
+
+.context__btn {
+  text-decoration: none;
+  color: inherit;
 
 }
-.github-icon{
-    display:inline-block;
-    background-image : url("../icons/github-square-brands.svg");
-    background-repeat: no-repeat;
-    height:16px;
-    width:16px;
-    position:relative;
-    bottom:-4px;
+
+.context__btn:hover {
+  text-decoration: underline;
+}
+
+.user {
+  color: rgba(4, 5, 9, 0.8);
+  text-decoration: none;
+  font-size: 0.8rem;
+}
+
+.user:hover {
+  text-decoration: underline;
+}
+
+
+section>footer {
+  position: absolute;
+  width: inherit;
+  bottom: 0;
+  margin: 0 auto 1rem auto;
+}
+
+.link {
+  text-decoration: none;
+  color: rgba(4, 5, 9, 0.8);
+}
+
+.link:hover {
+  text-decoration: underline;
+
+}
+
+.github-icon {
+  display: inline-block;
+  background-image: url("../icons/github-square-brands.svg");
+  background-repeat: no-repeat;
+  height: 16px;
+  width: 16px;
+  position: relative;
+  bottom: -4px;
 }
