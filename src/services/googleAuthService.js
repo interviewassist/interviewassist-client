@@ -1,7 +1,7 @@
 function onSignIn(googleUser) {
   var id_token = googleUser.getAuthResponse().id_token;
   console.log(id_token);
-  fetch("http://localhost:3000/api/auth/google", {
+  fetch("/api/auth/google", {
     method: "POST",
     headers: {
       Accept: "application/json",

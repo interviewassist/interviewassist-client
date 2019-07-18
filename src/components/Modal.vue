@@ -14,8 +14,7 @@
         <a class="forgot" href="#">아이디 및 비밀번호 찾기</a>
       </form>
       <div class="social_btn_group">
-        <!-- <div class="g-signin2" data-onsuccess="onSignIn"></div> -->
-        <button class="google_login g-signin2" data-onsuccess="onSignIn">
+        <button class="google_login">
           <img class="google_logo" src="../assets/icons/google_Logo150.png" />
         </button>
 
@@ -35,9 +34,6 @@ export default {
   name: "Modal",
   promp: {
     type: 1
-  },
-  beforeCreate: function() {
-    injectGoogleLogin(document);
   },
   mounted: function() {
     var close_modal = document.getElementsByClassName("close_modal")[0];
@@ -205,6 +201,10 @@ header > .modal_logo {
   background: #24292e;
 }
 
+.google_login {
+  background: white;
+  box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.3);
+}
 .google_login {
   background: white;
   box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.3);

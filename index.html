@@ -1,41 +1,13 @@
 <!DOCTYPE html>
 <html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+    <title>interviewassist</title>
+  </head>
 
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1.0" />
-  <meta name="google-signin-client_id"
-    content="864469301619-lmtu88dcg1jm5ta4niqmddaiq8ora8k7.apps.googleusercontent.com" />
-  <title>interviewassist</title>
-  <script>
-    // for Google auth
-    function onSignIn(googleUser) {
-      var id_token = googleUser.getAuthResponse().id_token;
-      fetch("/api/auth/google", {
-        method: "POST",
-        headers: {
-          Accept: "application/json",
-          "Content-Type": "application/json"
-        },
-        body: JSON.stringify({ id_token })
-      })
-        .then(res => {
-          res.text().then(data => {
-            let user = JSON.parse(data);
-            console.log(user)
-            localStorage.setItem("token", user.loginToken)
-          });
-        })
-        .catch(err => {
-          console.log(err);
-        });
-    }
-  </script>
-</head>
-
-<body>
-  <div id="app"></div>
-  <!-- built files will be auto injected -->
-</body>
-
+  <body>
+    <div id="app"></div>
+    <!-- built files will be auto injected -->
+  </body>
 </html>
