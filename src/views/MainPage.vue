@@ -49,62 +49,6 @@ export default {
           givenAnswer: "모범답안입니다...",
           references: ["github", "edwith"],
           lastUpdate: "2019.7.17"
-        },
-        {
-          id: "",
-          title: "면접질문입니다.....",
-          tags: ["javascript", "ES6", "WEB", "front-end"],
-          givenAnswer: "모범답안입니다...",
-          references: ["github", "edwith"],
-          lastUpdate: "2019.7.17"
-        },
-        {
-          id: "",
-          title: "면접질문입니다.....",
-          tags: ["javascript", "ES6", "WEB", "front-end"],
-          givenAnswer: "모범답안입니다...",
-          references: ["github", "edwith"],
-          lastUpdate: "2019.7.17"
-        },
-        {
-          id: "",
-          title: "면접질문입니다.....",
-          tags: ["javascript", "ES6", "WEB", "front-end"],
-          givenAnswer: "모범답안입니다...",
-          references: ["github", "edwith"],
-          lastUpdate: "2019.7.17"
-        },
-        {
-          id: "",
-          title: "면접질문입니다.....",
-          tags: ["javascript", "ES6", "WEB", "front-end"],
-          givenAnswer: "모범답안입니다...",
-          references: ["github", "edwith"],
-          lastUpdate: "2019.7.17"
-        },
-        {
-          id: "",
-          title: "면접질문입니다.....",
-          tags: ["javascript", "ES6", "WEB", "front-end"],
-          givenAnswer: "모범답안입니다...",
-          references: ["github", "edwith"],
-          lastUpdate: "2019.7.17"
-        },
-        {
-          id: "",
-          title: "면접질문입니다.....",
-          tags: ["javascript", "ES6", "WEB", "front-end"],
-          givenAnswer: "모범답안입니다...",
-          references: ["github", "edwith"],
-          lastUpdate: "2019.7.17"
-        },
-        {
-          id: "",
-          title: "면접질문입니다.....",
-          tags: ["javascript", "ES6", "WEB", "front-end"],
-          givenAnswer: "모범답안입니다...",
-          references: ["github", "edwith"],
-          lastUpdate: "2019.7.17"
         }
       ]
     };

@@ -48,19 +48,7 @@ export default {
         evt.currentTarget.classList.toggle("show_modal");
       }
     });
-
-    modal.addEventListener("click", function(evt) {
-      if (evt.target === evt.currentTarget) {
-        evt.currentTarget.classList.toggle("show_modal");
-        console.log("clicked modal................");
-        console.log(evt.currentTarget.tagName);
-      }
-    });
-  },
-  data: function() {
-    return {};
-  },
-  methods: {}
+  }
 };
 </script>
 <style>
