@@ -1,11 +1,20 @@
 <template>
+  <div>
+      <div id="white"></div>
       <router-view></router-view>
+  </div>
 </template>
 
 <script>
 export default {
   name: 'App',
   components: {
+  },
+  mounted:function(){
+    window.addEventListener("load",function(){
+      var white = document.getElementById("white");
+      white.remove();
+    });
   }
   ,data () {
     return {
@@ -15,6 +24,14 @@ export default {
 }
 </script>
 <style>
+/* white */
+#white{
+  display: fixed;
+  top:0;
+  left:0;
+  width:100vw;
+  height:100vh;
+}
 @import url('https://fonts.googleapis.com/css?family=Nanum+Gothic:400,700&display=swap&subset=korean');
 /* master.css*/
 html{
