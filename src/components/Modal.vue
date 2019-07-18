@@ -28,15 +28,10 @@
   </div>
 </template>
 <script>
-import { injectGoogleLogin } from "../services/SocialLoginService";
-
 export default {
   name: "Modal",
   promp: {
     type: 1
-  },
-  beforeCreate: function() {
-    injectGoogleLogin(document);
   },
   mounted: function() {
     var close_modal = document.getElementsByClassName("close_modal")[0];
@@ -46,6 +41,12 @@ export default {
 
     close_modal.addEventListener("click", evt => {
       modal_login.classList.toggle("show_modal");
+    });
+
+    modal_login.addEventListener("click", function(evt) {
+      if (evt.target === evt.currentTarget) {
+        evt.currentTarget.classList.toggle("show_modal");
+      }
     });
   }
 };

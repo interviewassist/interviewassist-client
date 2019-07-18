@@ -1,14 +1,17 @@
 <template lang="html">
-    <div class="index_wrap">
-        <img class="logo" src="../assets/logo2.png">
-        <div class="index_content">
-            <h1 style="text-align: center">개발자로서 직장을 찾고 계신가요?<br><br>면접에서 당신이 알아야할 것들이 있습니다</h1>
-            <button class="main_btn div_center" >회원가입</button>
-            <div style="width:100%;display:flex;justify-content:center;">
-                <a class="forceEnter div_center" href="main">가입없이 둘러보기</a>
+    <section class="index">
+        <img class="index__logo" src="../assets/logo2.png">
+        <article class="index__innerwrap">
+            <h1 class="index__title">
+                <p class="index__title--top">개발자로서 직장을 찾고 계신가요?</p>
+                <p class="index__title--bottom">면접에서 당신이 알아야할 것들이 있습니다</p>
+            </h1>
+            <div class="index__footer">
+                <button class="index__signup index__button" >회원가입</button>
+                <a class="index__enter index__button" href="main">가입없이 둘러보기</a>
             </div>
-        </div>
-    </div>
+        </article>
+    </section>
 </template>
 
 <script>
