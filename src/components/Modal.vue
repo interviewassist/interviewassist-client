@@ -14,11 +14,11 @@
         <a class="forgot" href="#">아이디 및 비밀번호 찾기</a>
       </form>
       <div class="social_btn_group">
-        <button class="google_login">
+        <button class="google_login" @click="loginWithSocialService('Google')">
           <img class="google_logo" src="../assets/icons/google_Logo150.png" />
         </button>
 
-        <button class="github_login">
+        <button class="github_login" @click="loginWithSocialService('Github')">
           <img class="github_img" src="../assets/icons/GitHub-Mark-Light-32px.png" />
 
           <img class="github_logo" src="../assets/icons/GitHub_Logo_White.png" />
@@ -28,7 +28,8 @@
   </div>
 </template>
 <script>
-import { injectGoogleLogin } from "../services/SocialLoginService";
+import FirebaseService from "../services/FirebaseService";
+import firebase from "firebase/app";
 
 export default {
   name: "Modal",
@@ -44,6 +45,21 @@ export default {
     close_modal.addEventListener("click", evt => {
       modal_login.classList.toggle("show_modal");
     });
+  },
+  methods: {
+    async loginWithSocialService(service) {
+      await FirebaseService.socialLoginWith(service); // sign in with social service
+      const id_token = await firebase
+        .auth()
+        .currentUser.getIdToken(/* forceRefresh */ true);
+      this.$http.post(`api/auth`, { id_token }).then(response => {
+        const { email, name, loginToken } = response.data;
+        this.$store.state.user = email;
+        console.log(this.$store.state.user);
+
+        localStorage.setItem("token", loginToken); // set token to be used in Authorization header
+      });
+    }
   }
 };
 </script>
