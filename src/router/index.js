@@ -5,11 +5,11 @@ Vue.use(Router)
 
 import IndexPage from '@/views/IndexPage'
 import MainPage from '@/views/MainPage'
+import MyproblemsPage from '@/views/MyproblemsPage'
 
 export default new Router({
   mode: 'history',
-  routes: [
-    {
+  routes: [{
       path: '/',
       name: 'IndexPage',
       component: IndexPage
@@ -18,6 +18,11 @@ export default new Router({
       path: '/main',
       name: 'MainPage',
       component: MainPage
+    },
+    {
+      path: '/myproblems',
+      name: 'MyproblemsPage',
+      component: MyproblemsPage
     }
   ]
 })

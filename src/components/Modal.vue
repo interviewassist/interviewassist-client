@@ -45,6 +45,12 @@ export default {
     close_modal.addEventListener("click", evt => {
       modal_login.classList.toggle("show_modal");
     });
+
+    modal_login.addEventListener("click", function(evt) {
+      if (evt.target === evt.currentTarget) {
+        evt.currentTarget.classList.toggle("show_modal");
+      }
+    });
   },
   methods: {
     async loginWithSocialService(service) {
@@ -66,5 +72,3 @@ export default {
 <style>
 @import url("../assets/css/modal__login.css");
 </style>
-
-
