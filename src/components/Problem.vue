@@ -15,17 +15,23 @@
           class="card__btn card__showgivenanswer"
           :class="{'card__showgivenanswer--active' : isUserAnswer}"
         >모범답안 비교</button>
-        <textarea style="height:10rem" class="card__givenanswer" readonly>{{card.givenAnswer}}</textarea>
+        <div ref="givenAnswer" class="card__givenanswer"></div>
       </div>
     </div>
   </div>
 </template>
 <script>
+import marked from "marked";
+
 export default {
   name: "Problem",
   props: {
     card: { type: null },
     isUserAnswer: { type: Boolean }
+  },
+  mounted() {
+    this.card.givenAnswer = marked(this.card.givenAnswer);
+    this.$refs.givenAnswer.innerHTML = this.card.givenAnswer;
   }
 };
 </script>

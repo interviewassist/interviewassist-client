@@ -19,7 +19,6 @@
   font-weight: bold;
   cursor: pointer;
   position: relative;
-
 }
 
 .card__innerwrap:hover {
@@ -120,13 +119,13 @@
   background: white;
 }
 
-textarea.card__givenanswer {
+div.card__givenanswer {
   display: none;
   padding: 1rem;
   background: white;
 }
 
-textarea.card__ShowGivenAnswer {
+div.card__ShowGivenAnswer {
   display: unset;
 }
 
@@ -142,11 +141,10 @@ textarea.card__ShowGivenAnswer {
   font-weight: bold;
 }
 
-.card__toggle>i {
+.card__toggle > i {
   font-size: 2rem;
   transition: all 0.3s;
 }
-
 
 .icon__rotate {
   transform: rotate(180deg);
