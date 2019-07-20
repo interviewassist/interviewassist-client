@@ -6,6 +6,10 @@
   section.card__outerwrap {
     column-count: 1;
   }
+  
+  article.center--closed {
+    display: none;
+}
 }
 
 @media (min-width: 415px) {
@@ -28,15 +32,11 @@ div.main_wrap {
   height: 94vh;
 }
 
-article.center {
+.center {
   flex: 1;
   overflow: auto;
   position: relative;
   scroll-behavior: smooth;
-}
-
-article.center--closed {
-  display: none;
 }
 
 article.center * {

@@ -1,10 +1,10 @@
 <template>
-  <nav class="right">
-    <button class="close_techlist">
+  <nav class="techlist">
+    <button class="techlist__closer techlist--removed">
       <i class="material-icons">chevron_right</i>
     </button>
-    <section>
-      <ul class="tech">
+    <section class="techlist__innerwrap">
+      <ul class="tech techlist--removed">
         <li v-for="topic in topics">
           <img class="tech_img tech_event" :src="topic.thumbnail" />
           <h3 class="tech_event">{{topic.name}}</h3>

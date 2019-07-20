@@ -41,6 +41,11 @@ export default {
 };
 </script>
 <style scoped>
+@media (min-width:415px) {
+.center__controlwrap--pushed {
+  right: 20rem;
+}
+}
 .center__controlwrap {
   display: flex;
   flex-direction: column;
@@ -49,9 +54,6 @@ export default {
   right: 0;
   transition: right 0.6s ease;
   margin-right: 0.5rem;
-}
-.center__controlwrap--pushed {
-  right: 20rem;
 }
 .center__control {
   box-sizing: content-box;

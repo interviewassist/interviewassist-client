@@ -1,9 +1,11 @@
 export function Mounted() {
 
-  var article = document.getElementsByClassName("center")[0];
+  var center = document.getElementsByClassName("center")[0];
 
-  var techlist = document.getElementsByClassName("right")[0];
-  var tech_section = document.querySelector("nav.right>section");
+  var techlist = document.getElementsByClassName("techlist")[0];
+  var techlist__innerwrap = document.getElementsByClassName("techlist__innerwrap")[0];
+  let techlist__closer =  techlist.firstElementChild;
+  let techlist__tech = techlist__innerwrap.firstElementChild;
 
   var control = document.getElementsByClassName("center__controlwrap")[0];
 
@@ -11,80 +13,60 @@ export function Mounted() {
   var move_techlist = document.getElementsByClassName("header__movetechlist")[0];
   /** menu open&close button  */
   move_techlist.addEventListener("click", function (element) {
-    // article.classList.toggle("center--closed");
-    // techlist.classList.toggle("right--closed");
-    let closing_btn = techlist.firstElementChild;
-    let ul = tech_section.firstElementChild;
     /**In callback function ( this. === move_techlist. )*/
-    if (techlist.isOpened === undefined) {
-      context.isOpened = false;
-    }
-    if (techlist.isOpened) {
-      techlist.style.width = "0px";
-      tech_section.style.width = "0px";
-      tech_section.style.transitionDelay = "0s";
-      tech_section.style.opacity = "0";
-      article.style.display = "block";
 
-      closing_btn.style.display = "none";
-      ul.style.display = "none";
-      control.classList.toggle("center__controlwrap--pushed");
-    } else {
-      if (window.outerWidth <= 414) {
-        if (article.style.display === "none") {
-          context.style.width = "0px";
-          context__wrap.style.width = "0px";
-          context__wrap.style.transitionDelay = "0s";
-          context__wrap.style.opacity = "0";
-          context.isOpened = !context.isOpened;
-        } else {
-          article.style.display = "none";
-        }
-        techlist.style.width = "100vw";
-        tech_section.style.width = "100vw";
-      } else {
-        techlist.style.width = "20rem";
-        tech_section.style.width = "20rem";
+    let isTechlistOpened = techlist.classList.contains("techlist--opened");
+    let isOtherOpened = center.classList.contains("center--closed");
+    if (isTechlistOpened) {
+      if(isOtherOpened){
+        center.classList.toggle("center--closed");
       }
-      tech_section.style.transitionDelay = "0.23s";
-      tech_section.style.opacity = "1";
-
-      closing_btn.style.display = "unset";
-      ul.style.display = "unset";
-      control.classList.toggle("center__controlwrap--pushed");
+    } else {
+      if (isOtherOpened) {
+        if (window.outerWidth <= 414) {
+          context.classList.toggle("context--opened");
+          context__innerwrap.classList.toggle("context__innerwrap--opened");
+        }
+      }else{
+        center.classList.toggle("center--closed");
+      }
     }
-    techlist.isOpened = !techlist.isOpened;
+    control.classList.toggle("center__controlwrap--pushed");
+    techlist.classList.toggle("techlist--opened");
+    techlist__innerwrap.classList.toggle("techlist__innerwrap--opened");
+    techlist__closer.classList.toggle("techlist--removed");
+    techlist__tech.classList.toggle("techlist--removed");
   });
 
   var move_context = document.getElementsByClassName("header__movecontext")[0];
-  var context = document.getElementsByClassName("left")[0];
-  var context__wrap = document.getElementsByClassName("context__wrap")[0];
+  var context = document.getElementsByClassName("context")[0];
+  var context__innerwrap = document.getElementsByClassName("context__innerwrap")[0];
 
   move_context.addEventListener("click", function (element) {
     /**In callback function ( this. === move_context. )*/
-    if (context.isOpened === undefined) {
-      context.isOpened = false;
-    }
-    if (context.isOpened) {
-      context__wrap.style.transitionDelay = "0s";
-      article.style.display = "block";
+
+    let isContextOpened = context.classList.contains("context--opened");
+    let isOtherOpened = center.classList.contains("center--closed");
+
+    if (isContextOpened) {
+      if(isOtherOpened){
+        center.classList.toggle("center--closed");
+      }
     } else {
-      if (window.outerWidth <= 414) {
-        if (article.style.display === "none") {
-          techlist.style.width = "0px";
-          tech_section.style.width = "0px";
-          tech_section.style.transitionDelay = "0s";
-          tech_section.style.opacity = "0";
-          techlist.isOpened = !techlist.isOpened;
-        } else {
-          article.style.display = "none";
+      if (isOtherOpened) {
+        if (window.outerWidth <= 414) {
+          techlist.classList.toggle("techlist--opened");
+          techlist__innerwrap.classList.toggle("techlist__innerwrap--opened");
+          techlist__closer.classList.toggle("techlist--removed");
+          techlist__tech.classList.toggle("techlist--removed");
+          control.classList.toggle("center__controlwrap--pushed");
         }
-      } else {}
-      context__wrap.style.transitionDelay = "0.4s";
+      } else {
+          center.classList.toggle("center--closed");
+      }
     }
 
-    context.classList.toggle("left--opened");
-    context__wrap.classList.toggle("context__wrap--opened");
-    context.isOpened = !context.isOpened;
+    context.classList.toggle("context--opened");
+    context__innerwrap.classList.toggle("context__innerwrap--opened");
   });
 }
