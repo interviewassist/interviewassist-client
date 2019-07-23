@@ -41,17 +41,20 @@ export default {
   data: function() {
     return {
       tech: "android",
-      problems: [
-        {
-          id: "",
-          title: "면접질문입니다.....",
-          tags: ["javascript", "ES6", "WEB", "front-end"],
-          givenAnswer: "모범답안입니다...",
-          references: ["github", "edwith"],
-          lastUpdate: "2019.7.17"
-        }
-      ]
+      problems: []
     };
+  },
+  created() {
+    this.$http.get("/api/problems").then(response => {
+      let problems = response.data;
+      console.log(problems);
+      problems.forEach(problem => {
+        problem.givenAnswer = problem.given_answer;
+        delete problem.given_answer;
+        problem.tags = problem.tags.map(item => item.tag); // flats tag array
+      });
+      this.problems = problems;
+    });
   },
   mounted: Mounted,
   methods: {

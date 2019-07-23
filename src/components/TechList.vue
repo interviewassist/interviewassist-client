@@ -29,14 +29,12 @@ export default {
     this.$http.get(`/api/topics/`).then(response => {
       let { data } = response;
       data.forEach(topic => {
-        console.log("test");
         this.$http
           .get(`/api/topics/thumbnail/${topic.thumbnail}`)
           .then(response => {
             topic.thumbnail = `data:image/png;base64,${response.data}`;
           });
       });
-      console.log(data);
       this.topics = data;
     });
   },
