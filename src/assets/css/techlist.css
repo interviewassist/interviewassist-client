@@ -4,9 +4,10 @@
   nav.techlist__innerwrap--opened {
     width: 100vw;
   }
-  button.techlist--removed
-  ,ul.techlist--removed{
-    display:none;
+
+  button.techlist--removed,
+  ul.techlist--removed {
+    display: none;
   }
 }
 
@@ -38,7 +39,6 @@ nav.techlist--opened {
 
 .techlist__innerwrap {
   height: 100%;
-  width: 0;
   transition-delay: 0s;
   opacity: inherit;
 }
@@ -57,6 +57,7 @@ nav.techlist__innerwrap--opened {
   top: 0;
   width: 30px;
 }
+
 .techlist__closer>i {
   font-size: 24px;
   transition: all 0.6s ease;
@@ -75,7 +76,7 @@ nav.techlist__innerwrap--opened {
   overflow: auto;
   padding: 10px 15px 0 15px;
   height: inherit;
-  display: none;
+  width: 100%;
 }
 
 .tech>li:hover {

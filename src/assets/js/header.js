@@ -4,10 +4,10 @@ export function Mounted() {
 
   var techlist = document.getElementsByClassName("techlist")[0];
   var techlist__innerwrap = document.getElementsByClassName("techlist__innerwrap")[0];
-  let techlist__closer =  techlist.firstElementChild;
+  let techlist__closer = techlist.firstElementChild;
   let techlist__tech = techlist__innerwrap.firstElementChild;
 
-  var control = document.getElementsByClassName("center__controlwrap")[0];
+  var control = document.getElementsByClassName("control__wrap")[0];
 
 
   var move_techlist = document.getElementsByClassName("header__movetechlist")[0];
@@ -18,7 +18,7 @@ export function Mounted() {
     let isTechlistOpened = techlist.classList.contains("techlist--opened");
     let isOtherOpened = center.classList.contains("center--closed");
     if (isTechlistOpened) {
-      if(isOtherOpened){
+      if (isOtherOpened) {
         center.classList.toggle("center--closed");
       }
     } else {
@@ -27,11 +27,11 @@ export function Mounted() {
           context.classList.toggle("context--opened");
           context__innerwrap.classList.toggle("context__innerwrap--opened");
         }
-      }else{
+      } else {
         center.classList.toggle("center--closed");
       }
     }
-    control.classList.toggle("center__controlwrap--pushed");
+    control.classList.toggle("control__wrap--pushed");
     techlist.classList.toggle("techlist--opened");
     techlist__innerwrap.classList.toggle("techlist__innerwrap--opened");
     techlist__closer.classList.toggle("techlist--removed");
@@ -49,7 +49,7 @@ export function Mounted() {
     let isOtherOpened = center.classList.contains("center--closed");
 
     if (isContextOpened) {
-      if(isOtherOpened){
+      if (isOtherOpened) {
         center.classList.toggle("center--closed");
       }
     } else {
@@ -59,10 +59,10 @@ export function Mounted() {
           techlist__innerwrap.classList.toggle("techlist__innerwrap--opened");
           techlist__closer.classList.toggle("techlist--removed");
           techlist__tech.classList.toggle("techlist--removed");
-          control.classList.toggle("center__controlwrap--pushed");
+          control.classList.toggle("control__wrap--pushed");
         }
       } else {
-          center.classList.toggle("center--closed");
+        center.classList.toggle("center--closed");
       }
     }
 
