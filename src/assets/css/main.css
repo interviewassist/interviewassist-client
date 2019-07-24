@@ -3,8 +3,8 @@
     padding: 3rem 1rem 1rem 1rem;
   }
 
-  section.card__outerwrap {
-    column-count: 1;
+  article.center--closed {
+    display: none;
   }
 }
 
@@ -13,9 +13,6 @@
     padding: 4rem 3rem 3rem 3rem;
   }
 
-  section.card__outerwrap {
-    column-count: 2;
-  }
 }
 
 div.main_wrap {
@@ -23,20 +20,28 @@ div.main_wrap {
   color: rgba(4, 5, 9, 0.8);
 }
 
+@media (min-width:0px) and (max-width: 1600px) {
+  section.card__outerwrap {
+    column-count: 1;
+  }
+}
+
+@media (min-width: 1601px) {
+  section.card__outerwrap {
+    column-count: 2;
+  }
+}
+
 .main_wrap>section {
   display: flex;
   height: 94vh;
 }
 
-article.center {
+.center {
   flex: 1;
   overflow: auto;
   position: relative;
   scroll-behavior: smooth;
-}
-
-article.center--closed {
-  display: none;
 }
 
 article.center * {

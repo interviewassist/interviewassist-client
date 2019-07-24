@@ -1,47 +1,46 @@
-@media (min-width:0px) and(max-width:414px) {
-  nav.left--opened {
-    width: 100vw
-  }
-
-  section.context__wrap--opened {
+@media (min-width:0px) and (max-width:414px) {
+  nav.context--opened,
+  section.context__innerwrap--opened  {
     width: 100vw
   }
 }
 
 @media (min-width:415px) {
-  nav.left--opened {
-    width: 10rem
-  }
-
-  section.context__wrap--opened {
+  nav.context--opened,
+  section.context__innerwrap--opened  {
     width: 10rem
   }
 }
 
-.left {
+.context {
   position: relative;
   width: 0;
   height: inherit;
   transition: all 0.4s ease-out;
   border-right: 1px solid rgba(200, 200, 200, 0.5);
+  opacity:0;
 }
 
-.context__wrap {
+.context__innerwrap {
   margin: 4rem 0 0 0;
   text-align: center;
   height: inherit;
   width: 0;
   opacity: 0;
+  transition-delay: 0s;
 }
 
-nav.left--opened {}
+nav.context--opened {
+  opacity:1;
+}
 
-section.context__wrap--opened {
-  opacity: 1
+section.context__innerwrap--opened {
+  opacity:1;
+  transition-delay: 0.4s;
 }
 
 
-.close_context {
+.context__closer {
   background: transparent;
   height: 30px;
   position: absolute;
@@ -50,12 +49,12 @@ section.context__wrap--opened {
   width: 30px;
 }
 
-.close_context>i {
+.context__closer>i {
   font-size: 24px;
   transition: all 0.4s ease;
 }
 
-.close_context>i:hover {
+.context__closer>i:hover {
   font-weight: bold;
 }
 
@@ -71,7 +70,7 @@ section.context__wrap--opened {
   cursor: pointer;
 }
 
-.context__wrap * {
+.context__innerwrap * {
   opacity: inherit;
   transition: all 0.3s;
 }

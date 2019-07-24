@@ -1,19 +1,16 @@
 export function Mounted() {
-  var close_context = document.querySelector("nav>.close_context");
+  var context__closer = document.getElementsByClassName("context__closer")[0];
 
-  var article = document.getElementsByClassName("center")[0];
-  var nav = document.querySelector("nav");
-  var section = document.querySelector("nav>section");
+  var center = document.getElementsByClassName("center")[0];
+  var context = document.getElementsByClassName("context")[0];
+  var context__innerwrap = document.getElementsByClassName("context__innerwrap")[0];
 
-  close_context.addEventListener("click", function (element) {
-    /**In callback function ( this. === close_context. )*/
-    nav.style.width = "0px";
-    section.style.width = "0px";
-    section.style.transitionDelay = "0s";
-    section.style.opacity = "0";
+  context__closer.addEventListener("click", function (element) {
+    /**In callback function ( this. === context__closer. )*/
+    context.classList.toggle("context--opened");
+    context__innerwrap.classList.toggle("context__innerwrap--opened");
 
-    article.style.display = "block";
-    nav.isOpened = !nav.isOpened;
+    center.classList.toggle("center--closed");
   });
 
   var user_login = document.getElementsByClassName("user_login")[0];

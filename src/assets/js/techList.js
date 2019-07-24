@@ -1,26 +1,23 @@
 export function Mounted() {
   // fetch topic list
-
-  var close_techlist = document.querySelector(".right>.close_techlist");
-
+  var techlist__closer = document.querySelector(".techlist>.techlist__closer");
+  var center = document.getElementsByClassName("center")[0];
   /** menu open&close button  */
-  close_techlist.addEventListener("click", function (element) {
-    var article = document.getElementsByClassName("center");
-    var nav = document.querySelector("nav.right");
-    var section = document.querySelector("nav.right>section");
-    var control = document.getElementsByClassName("center__controlwrap")[0];
+  techlist__closer.addEventListener("click", function (element) {
+    var techlist = document.getElementsByClassName("techlist")[0];
+    var techlist__innerwrap = document.getElementsByClassName("techlist__innerwrap")[0];
+    let techlist__tech = techlist__innerwrap.firstElementChild;
 
-    // nav.classList.toggle("right--closed");
-    // article.classList.toggle("center--closed");
-    /**In callback function ( this. === close_techlist. )*/
-    nav.style.width = "0px";
-    section.style.width = "0px";
-    section.style.transitionDelay = "0s";
-    section.style.opacity = "0";
+    var control = document.getElementsByClassName("control__wrap")[0];
 
-    article[0].style.display = "block";
-    nav.isOpened = !nav.isOpened;
-    control.classList.toggle("center__controlwrap--pushed");
+    /**In callback function ( this. === techlist__closer. )*/
+    control.classList.toggle("control__wrap--pushed");
+    techlist.classList.toggle("techlist--opened");
+    techlist__innerwrap.classList.toggle("techlist__innerwrap--opened");
+    techlist__closer.classList.toggle("techlist--removed");
+    techlist__tech.classList.toggle("techlist--removed");
+
+    center.classList.toggle("center--closed");
   });
 
   /** list item's event  */

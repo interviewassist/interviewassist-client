@@ -1,11 +1,12 @@
 <template>
-  <nav class="left">
+  <nav class="context">
     <ModalLogin></ModalLogin>
     <ModalSignup></ModalSignup>
-    <button class="close_context">
+
+    <button class="context__closer">
       <i class="material-icons">chevron_left</i>
     </button>
-    <section class="context__wrap">
+    <section class="context__innerwrap">
       <div id="profile_img"></div>
       <a href="#" class="context__btn user_login">로그인</a>
       <a href="#" class="context__btn user_signup">회원가입</a>

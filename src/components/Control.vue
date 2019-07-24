@@ -1,9 +1,9 @@
 <template>
-  <div class="center__controlwrap">
-    <button class="center__control center__control__movetop">
+  <div class="control__wrap">
+    <button class="control control__movetop" @click="scrollToTop">
       <i class="material-icons">arrow_upward</i>
     </button>
-    <button class="center__control center__control__addproblem">
+    <button class="control control__addproblem" @click="add">
       <i class="material-icons">add</i>
     </button>
   </div>
@@ -11,37 +11,60 @@
 <script>
 export default {
   name: "Control",
+  data: () => ({
+    center: null,
+    controlWrap: null,
+    moveTop: null
+  }),
   mounted: function() {
-    var center = document.getElementsByClassName("center")[0];
-    let controlWrap = document.getElementsByClassName("center__controlwrap")[0];
-    let moveTop = document.getElementsByClassName(
-      "center__control__movetop"
-    )[0];
+    this.center = document.getElementsByClassName("center")[0];
+    this.controlWrap = document.getElementsByClassName("control__wrap")[0];
+    this.moveTop = document.getElementsByClassName("control__movetop")[0];
+
     /** Center 스크롤시 moveTop 버튼 활성화 여부 */
-    center.addEventListener("scroll", () => {
+    this.center.addEventListener("scroll", () => {
       if (
-        center.scrollTop != 0 &&
-        !moveTop.classList.contains("center__control--hidden")
+        this.center.scrollTop != 0 &&
+        !this.moveTop.classList.contains("control--hidden")
       ) {
-        moveTop.classList.toggle("center__control--hidden");
+        this.moveTop.classList.toggle("control--hidden");
       } else if (
-        center.scrollTop == 0 &&
-        moveTop.classList.contains("center__control--hidden")
+        this.center.scrollTop == 0 &&
+        this.moveTop.classList.contains("control--hidden")
       ) {
-        moveTop.classList.toggle("center__control--hidden");
+        this.moveTop.classList.toggle("control--hidden");
       }
     });
     /** Center 스크롤시 moveTop 버튼 활성화 여부 */
     /** moveTop 버튼 기능 */
-    moveTop.addEventListener("click", () => {
-      center.scrollTo(0, 0);
+    this.moveTop.addEventListener("click", () => {
+      this.center.scrollTo(0, 0);
     });
     /** moveTop 버튼 기능 */
+  },
+  methods: {
+    add: function() {
+      let modal = document.getElementsByClassName("modal");
+      let modal_login = modal[0];
+      let modal_signup = modal[1];
+      let modal_addproblem = modal[2];
+
+      modal_addproblem.classList.toggle("show_modal");
+      console.log(modal);
+    },
+    scrollToTop: function() {
+      this.center.scrollTo(0, 0);
+    }
   }
 };
 </script>
 <style scoped>
-.center__controlwrap {
+@media (min-width: 415px) {
+  div.control__wrap--pushed {
+    right: 20rem;
+  }
+}
+.control__wrap {
   display: flex;
   flex-direction: column;
   position: fixed;
@@ -50,10 +73,7 @@ export default {
   transition: right 0.6s ease;
   margin-right: 0.5rem;
 }
-.center__controlwrap--pushed {
-  right: 20rem;
-}
-.center__control {
+.control {
   box-sizing: content-box;
   width: 2rem;
   height: 2rem;
@@ -64,10 +84,10 @@ export default {
   color: #ddd;
   border-radius: 50%;
 }
-.center__control__movetop {
+.control__movetop {
   display: none;
 }
-.center__control--hidden {
+.control--hidden {
   display: unset;
 }
 </style>

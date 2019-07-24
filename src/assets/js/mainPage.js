@@ -8,7 +8,6 @@ export function Mounted() {
     /** moveTop 버튼 */
     if (list.contains("center__control__movetop")) {
       clicked.parentElement.parentElement.scrollTo(0, 0);
-      console.log("Clicked 'moveTop'........................");
     } else if (list.contains("card__toggle")) {
       /** moveTop 버튼 */
       /**카드 열림 버튼*/
@@ -17,7 +16,7 @@ export function Mounted() {
       var icon = clicked.firstElementChild;
       icon.classList.toggle("icon__rotate");
       closeGivenAnswer(detail);
-    } else if (list.contains("material-icons")) {
+    } else if (list.contains("card__opener")) {
       var detail = clicked.parentElement.nextElementSibling;
       detail.classList.toggle("card__ShowDetail");
       clicked.classList.toggle("icon__rotate");

@@ -1,0 +1,35 @@
+@media (min-width: 0px) and (max-width: 414px) {
+  .modal>.modal__add {
+    width: 90vw;
+    height: 90vh;
+  }
+}
+
+@media (min-width: 415px) {
+  .modal>.modal__add {
+    width: 80vh;
+    height: 80vh;
+  }
+}
+
+#add_form {
+  justify-content: flex-end;
+  padding-bottom: 10vh;
+}
+
+.modal__option::before {
+  content: "test";
+}
+
+.modal__text {
+  padding-top: 1rem;
+}
+
+.modal__tech {
+  width: 100%;
+  outline: none;
+}
+
+.modal__tech__icon {
+  line-height: 5vh;
+}

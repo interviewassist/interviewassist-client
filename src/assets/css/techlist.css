@@ -1,84 +1,98 @@
 @media (min-width: 0px) and (max-width: 414px) {
-  nav.right {
-    width: 0;
+
+  nav.techlist--opened,
+  nav.techlist__innerwrap--opened {
+    width: 100vw;
+  }
+
+  button.techlist--removed,
+  ul.techlist--removed {
+    display: none;
   }
 }
 
 @media (min-width: 415px) {
-  nav.right {
-    width: 0;
+
+  nav.techlist--opened,
+  nav.techlist__innerwrap--opened {
+    width: 20rem;
   }
 }
 
-nav.right {
-  /* display: none; */
+.techlist {
   position: relative;
-  height: inherit;
   padding-top: 4vh;
   border-left: 1px solid rgba(200, 200, 200, 0.5);
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
 
   transition: all 0.6s ease;
+  height: inherit;
+  width: 0;
+  opacity: 0;
 }
 
-nav.right--closed {
+nav.techlist--opened {
   display: unset;
+  opacity: 1;
 }
 
-nav.right>button.close_techlist {
+.techlist__innerwrap {
+  height: 100%;
+  transition-delay: 0s;
+  opacity: inherit;
+}
+
+nav.techlist__innerwrap--opened {
+  display: unset;
+  transition-delay: 0.23s;
+  opacity: 1;
+}
+
+.techlist__closer {
   background: transparent;
   height: 30px;
   position: absolute;
   left: 0;
   top: 0;
   width: 30px;
-  display: none;
 }
 
-.close_techlist>i {
+.techlist__closer>i {
   font-size: 24px;
   transition: all 0.6s ease;
 }
 
-.close_techlist>i:hover {
+.techlist__closer>i:hover {
   font-weight: bold;
 }
 
-nav.right>section {
-  height: 100%;
-  width: inherit;
+
+.techlist__innerwrap * {
   opacity: inherit;
 }
 
-nav.right>section * {
-  opacity: inherit;
-}
-
-section>ul.tech {
+.tech {
   overflow: auto;
   padding: 10px 15px 0 15px;
   height: inherit;
-  display: none;
+  width: 100%;
 }
 
-ul.tech>li:hover {
-  /* background:rgba(200,200,200,0.5); */
-  /* border-bottom : 1px solid rgba(200,200,200,0.5); */
+.tech>li:hover {
+
   cursor: pointer;
   box-shadow: 0 1px 4px 4px rgba(200, 200, 200, 0.5);
-  /* none : 그림자 효과를 없앱니다.
+  /* 
   x-position : 가로 위치입니다. 양수면 오른쪽에, 음수면 왼쪽에 그림자가 만들어집니다. (필수)
   y-position : 세로 위치입니다. 양수면 아래쪽에, 음수면 위쪽에 그림자가 만들어집니다. (필수)
   blur : 그림자를 흐릿하게 만듭니다. 값이 클 수록 더욱 흐려집니다.
   spread : 양수면 그림자를 확장하고, 음수면 축소합니다.
   color : 그림자 색을 정합니다.
-  inset : 그림자를 요소의 안쪽에 만듭니다.
-  initial : 기본값으로 설정합니다.
-  inherit : 부모 요소의 속성값을 상속받습니다. */
+  */
 }
 
-ul.tech>li {
+.tech>li {
   list-style: none;
   padding: 12px 0 12px 0;
   margin: 0 0 9px 0;
@@ -86,7 +100,7 @@ ul.tech>li {
   border-radius: 5px;
 }
 
-ul.tech>li:last-child {
+.tech>li:last-child {
   border-bottom: none;
 }
 

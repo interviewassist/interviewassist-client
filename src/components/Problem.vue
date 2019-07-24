@@ -7,7 +7,10 @@
         <span v-for="tag in card.tags" class="card__tag">{{tag}}</span>
       </div>
       <button class="card__toggle">
-        <i class="material-icons" :class="{'icon__rotate':isUserAnswer}">keyboard_arrow_down</i>
+        <i
+          class="material-icons card__opener"
+          :class="{'icon__rotate':isUserAnswer}"
+        >keyboard_arrow_down</i>
       </button>
       <div class="card__detail" :class="{ 'card__ShowDetail' : isUserAnswer}">
         <textarea style="height:10rem" class="card__input" name="useranswer" placeholder="작성해주세요">{{card.answer}}</textarea>
