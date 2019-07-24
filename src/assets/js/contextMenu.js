@@ -1,7 +1,7 @@
 export function Mounted() {
   var context__closer = document.getElementsByClassName("context__closer")[0];
 
-  var article = document.getElementsByClassName("center")[0];
+  var center = document.getElementsByClassName("center")[0];
   var context = document.getElementsByClassName("context")[0];
   var context__innerwrap = document.getElementsByClassName("context__innerwrap")[0];
 
@@ -10,7 +10,7 @@ export function Mounted() {
     context.classList.toggle("context--opened");
     context__innerwrap.classList.toggle("context__innerwrap--opened");
 
-    article.style.display = "block";
+    center.classList.toggle("center--closed");
   });
 
   var user_login = document.getElementsByClassName("user_login")[0];

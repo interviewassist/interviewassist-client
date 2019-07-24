@@ -1,16 +1,23 @@
 <template>
   <div class="modal">
     <section class="modal_wrap">
-      <button class="close_modal">
+      <button class="close_modal" @click="closeModal">
         <i class="material-icons">close</i>
       </button>
       <header>
         <img class="modal_logo" src="../assets/logo2.png" />
       </header>
-      <form id="login_form" method="get" action="#">
-        <input class="modal_input" name="user_id" type="email" placeholder="이메일" autofocus required />
-        <input class="modal_input" name="user_pw" type="password" placeholder="비밀번호" required />
-        <input type="submit" class="login_btn" value="로그인" />
+      <form id="login_form" class="modal__form" method="get" action="#">
+        <input
+          class="modal__input"
+          name="user_id"
+          type="email"
+          placeholder="이메일"
+          autofocus
+          required
+        />
+        <input class="modal__input" name="user_pw" type="password" placeholder="비밀번호" required />
+        <input type="submit" class="modal__submit" value="로그인" />
         <a class="forgot" href="#">아이디 및 비밀번호 찾기</a>
       </form>
       <div class="social_btn_group">
@@ -33,24 +40,15 @@ import firebase from "firebase/app";
 
 export default {
   name: "Modal",
+  data: () => ({
+    modal_login: null
+  }),
   promp: {
     type: 1
   },
   mounted: function() {
-    var close_modal = document.getElementsByClassName("close_modal")[0];
     var modal = document.getElementsByClassName("modal");
-    var modal_login = modal[0];
-    var modal_signup = modal[1];
-
-    close_modal.addEventListener("click", evt => {
-      modal_login.classList.toggle("show_modal");
-    });
-
-    modal_login.addEventListener("click", function(evt) {
-      if (evt.target === evt.currentTarget) {
-        evt.currentTarget.classList.toggle("show_modal");
-      }
-    });
+    this.modal_login = modal[0];
   },
   methods: {
     async loginWithSocialService(service) {
@@ -65,6 +63,9 @@ export default {
 
         localStorage.setItem("token", loginToken); // set token to be used in Authorization header
       });
+    },
+    closeModal: function() {
+      this.modal_login.classList.toggle("show_modal");
     }
   }
 };

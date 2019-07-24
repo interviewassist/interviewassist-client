@@ -14,14 +14,13 @@ export default {
   data: () => ({
     center: null,
     controlWrap: null,
-    moveTop: null,
-    addProblem: null
+    moveTop: null
   }),
   mounted: function() {
     this.center = document.getElementsByClassName("center")[0];
     this.controlWrap = document.getElementsByClassName("control__wrap")[0];
     this.moveTop = document.getElementsByClassName("control__movetop")[0];
-    this.addProblem = document.getElementsByClassName("control__addproblem")[0];
+
     /** Center 스크롤시 moveTop 버튼 활성화 여부 */
     this.center.addEventListener("scroll", () => {
       if (
@@ -45,7 +44,13 @@ export default {
   },
   methods: {
     add: function() {
-      console.log(this.addProblem);
+      let modal = document.getElementsByClassName("modal");
+      let modal_login = modal[0];
+      let modal_signup = modal[1];
+      let modal_addproblem = modal[2];
+
+      modal_addproblem.classList.toggle("show_modal");
+      console.log(modal);
     },
     scrollToTop: function() {
       this.center.scrollTo(0, 0);

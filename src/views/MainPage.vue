@@ -12,6 +12,8 @@
                   </template>
                 </section>
                 <Control></Control>
+    <ModalAddProblem></ModalAddProblem>
+
             </article>
             <TechList @tech-event="getTech"></TechList>
         </section>
@@ -26,6 +28,7 @@ import SearchBox from "../components/SearchBox";
 import Header from "../components/Header";
 import Problem from "../components/Problem";
 import Control from "../components/Control";
+import ModalAddProblem from "../components/Modal__AddProblem";
 
 import { Mounted } from "../assets/js/mainPage";
 export default {
@@ -36,7 +39,8 @@ export default {
     SearchBox,
     Header,
     Problem,
-    Control
+    Control,
+    ModalAddProblem
   },
   data: function() {
     return {
@@ -47,7 +51,6 @@ export default {
   created() {
     this.$http.get("/api/problems").then(response => {
       let problems = response.data;
-      console.log(problems);
       problems.forEach(problem => {
         problem.givenAnswer = problem.given_answer;
         delete problem.given_answer;

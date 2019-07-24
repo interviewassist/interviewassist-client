@@ -1,7 +1,7 @@
 export function Mounted() {
   // fetch topic list
   var techlist__closer = document.querySelector(".techlist>.techlist__closer");
-
+  var center = document.getElementsByClassName("center")[0];
   /** menu open&close button  */
   techlist__closer.addEventListener("click", function (element) {
     var techlist = document.getElementsByClassName("techlist")[0];
@@ -16,6 +16,8 @@ export function Mounted() {
     techlist__innerwrap.classList.toggle("techlist__innerwrap--opened");
     techlist__closer.classList.toggle("techlist--removed");
     techlist__tech.classList.toggle("techlist--removed");
+
+    center.classList.toggle("center--closed");
   });
 
   /** list item's event  */

@@ -2,6 +2,7 @@
   <nav class="context">
     <ModalLogin></ModalLogin>
     <ModalSignup></ModalSignup>
+
     <button class="context__closer">
       <i class="material-icons">chevron_left</i>
     </button>
