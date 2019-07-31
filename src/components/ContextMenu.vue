@@ -4,7 +4,7 @@
     <ModalSignup></ModalSignup>
 
     <button class="context__closer">
-      <i class="material-icons">chevron_left</i>
+      <i class="material-icons">chevron_right</i>
     </button>
     <section class="context__innerwrap">
       <div id="profile_img"></div>

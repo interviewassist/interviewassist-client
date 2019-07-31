@@ -48,6 +48,7 @@ export function Mounted() {
     let isContextOpened = context.classList.contains("context--opened");
     let isOtherOpened = center.classList.contains("center--closed");
 
+   
     if (isContextOpened) {
       if (isOtherOpened) {
         center.classList.toggle("center--closed");
@@ -65,7 +66,8 @@ export function Mounted() {
         center.classList.toggle("center--closed");
       }
     }
-
+    
+    control.classList.toggle("control__wrap--pushed");
     context.classList.toggle("context--opened");
     context__innerwrap.classList.toggle("context__innerwrap--opened");
   });

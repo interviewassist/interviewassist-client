@@ -5,12 +5,15 @@ export function Mounted() {
   var context = document.getElementsByClassName("context")[0];
   var context__innerwrap = document.getElementsByClassName("context__innerwrap")[0];
 
+  var control = document.getElementsByClassName("control__wrap")[0];
+
   context__closer.addEventListener("click", function (element) {
     /**In callback function ( this. === context__closer. )*/
     context.classList.toggle("context--opened");
     context__innerwrap.classList.toggle("context__innerwrap--opened");
 
     center.classList.toggle("center--closed");
+    control.classList.toggle("control__wrap--pushed");
   });
 
   var user_login = document.getElementsByClassName("user_login")[0];
