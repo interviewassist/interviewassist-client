@@ -42,6 +42,7 @@ div.main_wrap {
   overflow: auto;
   position: relative;
   scroll-behavior: smooth;
+  overflow-x: hidden;
 }
 
 article.center * {

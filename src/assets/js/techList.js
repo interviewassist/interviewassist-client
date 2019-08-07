@@ -1,29 +1,43 @@
 export function Mounted() {
-  // fetch topic list
-  var techlist__closer = document.querySelector(".techlist>.techlist__closer");
-  var center = document.getElementsByClassName("center")[0];
-  /** menu open&close button  */
-  techlist__closer.addEventListener("click", function (element) {
-    var techlist = document.getElementsByClassName("techlist")[0];
-    var techlist__innerwrap = document.getElementsByClassName("techlist__innerwrap")[0];
-    let techlist__tech = techlist__innerwrap.firstElementChild;
+  /*========================================================
 
-    var control = document.getElementsByClassName("control__wrap")[0];
+    DOM Elements
 
-    /**In callback function ( this. === techlist__closer. )*/
-    control.classList.toggle("control__wrap--pushed");
+    ========================================================*/
+  const techlist = document.getElementsByClassName("techlist")[0];
+  const techlist__innerwrap = document.getElementsByClassName("techlist__innerwrap")[0];
+  const techlist__closer = document.getElementsByClassName("techlist__closer")[0];
+  const tech = document.getElementsByClassName("tech")[0];
+
+  const center = document.getElementsByClassName("center")[0];
+  const control = document.getElementsByClassName("control__wrap")[0];
+
+  /*========================================================
+
+    Add Event Listners
+
+    ========================================================*/
+
+  techlist__closer.addEventListener("click", closeTechlist);
+  tech.addEventListener("click", clickTechItem);
+
+  /*========================================================
+
+    Functions
+
+    ========================================================*/
+  function closeTechlist(element) {
+
     techlist.classList.toggle("techlist--opened");
     techlist__innerwrap.classList.toggle("techlist__innerwrap--opened");
     techlist__closer.classList.toggle("techlist--removed");
-    techlist__tech.classList.toggle("techlist--removed");
+    tech.classList.toggle("techlist--removed");
 
     center.classList.toggle("center--closed");
-  });
+    control.classList.toggle("control__wrap--pushed");
+  }
 
-  /** list item's event  */
-  var tech = document.querySelector("ul.tech");
-
-  tech.addEventListener("click", evt => {
+  function clickTechItem() {
     /* evt.currentTarget === tech */
     var clicked = evt.target.tagName;
     if (clicked === "LI") {
@@ -34,5 +48,5 @@ export function Mounted() {
         evt.target.parentElement.lastElementChild.value
       );
     }
-  });
+  }
 }
