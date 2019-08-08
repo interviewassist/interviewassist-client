@@ -3,7 +3,6 @@
     <div class="main_wrap">
         <Header></Header>
         <section>
-            <ContextMenu></ContextMenu>
             <article class="center">
                 <SearchBox></SearchBox>
                 <section class="card__outerwrap">
@@ -12,9 +11,9 @@
                   </template>
                 </section>
                 <Control></Control>
-    <ModalAddProblem></ModalAddProblem>
-
+            <ModalAddProblem></ModalAddProblem>
             </article>
+            <ContextMenu></ContextMenu>
             <TechList @tech-event="getTech"></TechList>
         </section>
     </div>

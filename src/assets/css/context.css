@@ -8,7 +8,7 @@
 @media (min-width:415px) {
   nav.context--opened,
   section.context__innerwrap--opened  {
-    width: 10rem
+    width: 20rem
   }
 }
 
@@ -16,8 +16,8 @@
   position: relative;
   width: 0;
   height: inherit;
-  transition: all 0.4s ease-out;
-  border-right: 1px solid rgba(200, 200, 200, 0.5);
+  transition: all 0.6s ease;
+  border-left: 1px solid rgba(200, 200, 200, 0.5);
   opacity:0;
 }
 
