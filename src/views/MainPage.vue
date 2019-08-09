@@ -5,7 +5,8 @@
         <section>
             <article class="center">
                 <SearchBox></SearchBox>
-                <section class="card__outerwrap">
+                <ToggleButton></ToggleButton>
+                <section class="card__outerwrap card__outerwrap--single">
                   <template v-for="problem in problems">
                     <Problem :card="problem" ></Problem>
                   </template>
@@ -28,6 +29,7 @@ import Header from "../components/Header";
 import Problem from "../components/Problem";
 import Control from "../components/Control";
 import ModalAddProblem from "../components/Modal__AddProblem";
+import ToggleButton from "../components/ToggleButton";
 
 import { Mounted } from "../assets/js/mainPage";
 export default {
@@ -39,7 +41,8 @@ export default {
     Header,
     Problem,
     Control,
-    ModalAddProblem
+    ModalAddProblem,
+    ToggleButton
   },
   data: function() {
     return {
